@@ -9,7 +9,7 @@ module Saucerly
     def render_with_saucerly(options = nil, *args, &block)
       if options.is_a?(Hash) && options.has_key?(:pdf)
         options[:name] ||= options.delete(:pdf)
-        make_and_send_pdf(options.delete(:name), options)      
+        make_and_send_pdf(options.delete(:name), options)
       else
         render_without_saucerly(options, *args, &block)
       end
@@ -24,7 +24,7 @@ module Saucerly
       dom = org.xhtmlrenderer.resource.XMLResource.load(is).getDocument()
 
       renderer = org.xhtmlrenderer.pdf.ITextRenderer.new
-      renderer.setDocument(dom, nil);
+      renderer.setDocument(dom, nil)
       renderer.layout
 
       output = java.io.ByteArrayOutputStream.new
@@ -42,11 +42,10 @@ module Saucerly
     
       # Make all paths relative, on disk paths...
       html_string.gsub!(".com:/",".com/") # strip out bad attachment_fu URLs
-      html_string.gsub!( /src=["']+([^:]+?)["']/i ) { |m| "src=\"#{Rails.root}/public/" + $1 + '"' } # re-route absolute paths
+      html_string.gsub!(/src=["']+([^:]+?)["']/i) { |m| "src=\"#{Rails.root}/public/" + $1 + '"' } # re-route absolute paths
     
       # Remove asset ids on images with a regex
-      html_string.gsub!( /src=["'](\S+\?\d*)["']/i ) { |m| 'src="' + $1.split('?').first + '"' }
-    s
+      html_string.gsub!(/src=["'](\S+\?\d*)["']/i) { |m| 'src="' + $1.split('?').first + '"' }
       pdf_from_string(html_string)
     end
   
