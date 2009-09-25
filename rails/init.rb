@@ -1,1 +1,1 @@
-require File.dirname(__FILE__) + "/../lib/saucerly/rails"
+require File.join(File.dirname(__FILE__), '..', 'lib', 'saucerly')
