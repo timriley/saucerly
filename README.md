@@ -28,11 +28,19 @@ Rendering from an inline string:
 Installation
 ------------
 
+First, set up the dependencies:
+
 1. Install [JRuby](http://jruby.org/)
 2. Register the flying_saucer gem dependency: add `config.gem 'flying_saucer'` to `config/environment.rb`
 3. Install flying_saucer: `jruby -S rake gems:install`
-4. Install Saucerly: `jruby script/plugin install git://github.com/timriley/saucerly`
-5. You're ready to go! Add some code to your controllers like the examples above.
-6. If you're developing on OS X and you don't want a Java icon to appear in your dock, put `java.lang.System.set_property("java.awt.headless", "true")` in `environment.rb` or an initializer
+
+Then, install Saucerly:
+
+* As a gem, add `config.gem 'timriley-saucerly', :source => 'http://gems.github.com/', :lib => 'saucerly'` to `config/environment.rb` and run `jruby -S rake gems:install`
+* As a plugin, run `jruby script/plugin install git://github.com/timriley/saucerly`
+
+Now you're ready to go! Add some code to your controllers like the examples above.
+
+If you're developing on OS X and you don't want a Java icon to appear in your dock, put `java.lang.System.set_property("java.awt.headless", "true")` in `environment.rb` or an initializer
 
 Copyright (c) 2009 Tim Riley & RentMonkey Pty Ltd, released under the MIT license
