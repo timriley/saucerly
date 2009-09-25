@@ -1,7 +1,1 @@
-require 'java'
-require 'flying_saucer'
-
-require 'pdf_helper'
-
-Mime::Type.register 'application/pdf', :pdf
-ActionController::Base.send(:include, Saucerly::PdfHelper)
+require File.join(File.dirname(__FILE__), 'rails', 'init')
