@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{saucerly}
-  s.version = "0.5.0"
+  s.version = "0.5.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tim Riley"]
@@ -15,14 +15,15 @@ Gem::Specification.new do |s|
     "README.md"
   ]
   s.files = [
-    "MIT-LICENSE",
+    ".gitignore",
+     "MIT-LICENSE",
      "README.md",
      "Rakefile",
      "TODO",
      "VERSION",
      "init.rb",
+     "lib/saucerly.rb",
      "lib/saucerly/pdf_helper.rb",
-     "lib/saucerly/rails.rb",
      "rails/init.rb",
      "saucerly.gemspec"
   ]
