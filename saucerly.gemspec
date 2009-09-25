@@ -19,8 +19,12 @@ Gem::Specification.new do |s|
      "README.md",
      "Rakefile",
      "TODO",
+     "VERSION",
      "init.rb",
-     "lib/pdf_helper.rb"
+     "lib/saucerly/pdf_helper.rb",
+     "lib/saucerly/rails.rb",
+     "rails/init.rb",
+     "saucerly.gemspec"
   ]
   s.homepage = %q{http://github.com/timriley/saucerly}
   s.rdoc_options = ["--charset=UTF-8"]
