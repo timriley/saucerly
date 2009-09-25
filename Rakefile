@@ -2,6 +2,21 @@ require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
 
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gemspec|
+    gemspec.name = "saucerly"
+    gemspec.summary = "PDF rending plugin for Rails using FlyingSaucer."
+    gemspec.email = "tim@openmonkey.com"
+    gemspec.homepage = "http://github.com/timriley/saucerly"
+    gemspec.authors = ["Tim Riley"]
+    
+    gemspec.add_dependency('flying_saucer')
+  end
+rescue LoadError
+  puts "Jeweler not available. Install it with: sudo gem install jeweler"
+end
+
 desc 'Default: run unit tests.'
 task :default => :test
 
